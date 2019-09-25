@@ -1,0 +1,43 @@
+<table style="width:90%" align="center">
+    <tr>
+    <th><a href="{% url 'brakepads' %}">Гальмівні колодки</a></th> 
+    <th><a href="{% url 'tip' %}">Кермові наконечники</a></th>
+    <th><a href="{% url 'thrust' %}">Кермові тяги</a></th>
+    <th><a href="{% url 'steel_wheel' %}">Пильники кермової тяги</a></th>
+    <th><a href="{% url 'anthers' %}">Пильники кулака</a></th>
+    <th><a href="{% url 'bearing' %}">Підшипники</a></th>
+    <th><a href="{% url 'filter' %}">Фільтри</a></th>
+    <th><a href="{% url 'ordered' %}">Замовлено</a></th>
+    <th><a href="{% url 'admin:index' %} " target="_blank">Адмінка</a></th>
+    </tr>
+</table>
+<p>
+<table style="width:90%" align="center">
+  <tr>
+    <th> Номер деталі:</th>
+    <th>Конструкційний номер:</th>
+    <center><h2><td rowspan="2"><center><h3>{{ some }}</h3></center></td>
+  </tr>
+  <tr>
+
+        <td>
+        <form id="{{v}}"  method="post" name="{{v}}">{% csrf_token %}
+        <input type="checkbox" name="detail_number_check">
+        <input type="text" name="detail_number" size="8"/>
+        </center>
+        </td>
+
+        <td>
+         <input type="checkbox" name="description_number_check">
+        <input name="description_number" size="8"/>
+        <input type="hidden" name="action"  value="search"/>
+        <input type="submit" value="Шукати" class="btn btn-primary btn-user btn-block">
+        </form>
+        </td>
+
+      
+
+    </tr>
+
+
+</table>

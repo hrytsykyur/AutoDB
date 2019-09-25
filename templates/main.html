@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<title>Головна</title>
+</head>
+<body>
+<center>
+<table style="width:90%" align="center">
+    <tr>
+    <th><a href="{% url 'brakepads' %}">Гальмівні колодки</a></th> 
+    <th><a href="{% url 'tip' %}">Кермові наконечники</a></th>
+    <th><a href="{% url 'thrust' %}">Кермові тяги</a></th>
+    <th><a href="{% url 'steel_wheel' %}">Пильники кермової тяги</a></th>
+    <th><a href="{% url 'anthers' %}">Пильники кулака</a></th>
+    <th><a href="{% url 'bearing' %}">Підшипники</a></th>
+    <th><a href="{% url 'filter' %}">Фільтри</a></th>
+    <th><a href="{% url 'ordered' %}">Замовлено</a></th>
+    <th><a href="{% url 'admin:index' %} " target="_blank">Адмінка</a></th>
+    </tr>
+</table>
+</center>
+<p>
+</body>
+</html>

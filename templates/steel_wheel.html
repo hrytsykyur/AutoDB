@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<title>Пильники кермової тяги</title>
+</head>
+<body>
+
+{% include 'top.html' with  some="Пильник кермової тяги" %}
+<p>
+
+<table style="width:90%" align="center">
+  <tr>
+    <th>Номер деталі:</th>
+    <th>Ціна:</th> 
+    <th>Опис:</th>
+    <th>Конструкційний номер:</th>
+    <th>Наявно:</th>
+    <th>Зображення:</th>
+    <th>Діаметр 1:</th> 
+    <th>Діаметр 2:</th>
+    <th>Довжина:</th>
+    <th>Купили:</th>
+  </tr>
+  {% for s in data %}
+    <tr>
+    {% for k,v in s.items %}
+      {% if k == 'id' %}
+        <td><center><form id="{{v}}" action="steel_wheel" method="post" name="{{v}}">{% csrf_token %}
+        <input type="text" name="amount" id="option{{category.id}}"  size="8"/>
+        <input type="hidden" name="id"  value="{{v}}"/><input type="hidden" name="action"  value="to_ordered"/>
+        <center><input type="submit" value="Продано" class="btn btn-primary btn-user btn-block">
+        </form></center>
+        </td>
+      {% else %}
+        <td>{{ v }}</td>
+      {% endif %}
+      
+    {% endfor %}
+    </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>
